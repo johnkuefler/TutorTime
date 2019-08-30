@@ -7,8 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TutorTime", "Source\TutorTi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{2A8AE47D-1CC0-45A0-890F-8656F4AEB39A}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\..\Desktop\ERD.mdj = ..\..\..\Desktop\ERD.mdj
-		README.md = README.md
+		Docs\ERD.mdj = Docs\ERD.mdj
 	EndProjectSection
 EndProject
 Global
