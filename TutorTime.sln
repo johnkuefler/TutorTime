@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{2A8AE47D-1CC0-45A0-890F-8656F4AEB39A}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\..\Desktop\ERD.mdj = ..\..\..\Desktop\ERD.mdj
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global
