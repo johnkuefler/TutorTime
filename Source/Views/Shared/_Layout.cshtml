@@ -16,6 +16,7 @@
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"/>
     </environment>
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/dist/app.css" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -39,7 +40,9 @@
     <div class="container">
         
         <main role="main" class="pb-3">
-            @RenderBody()
+            <div id="app">
+        @RenderBody()
+    </div>
         </main>
     </div>
 
@@ -68,7 +71,11 @@
         </script>
     </environment>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
+    <script src="~/dist/app.js"></script>
+   <script>
+         new Vue({
+         }).$mount('#app')
+    </script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
