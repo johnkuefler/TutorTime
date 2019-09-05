@@ -22,7 +22,7 @@ namespace TutorTime.Controllers.APIs
         [HttpGet("~/api/tutors/{id}")]
         public IActionResult GetById([FromRoute] int id)
         {
-            return Ok(_context.Tutors.Find(id));
+            return Ok(_context.Tutors.FirstOrDefault(x => x.Id == id));
         }
 
         [HttpPost("~/api/tutors")]
@@ -73,7 +73,7 @@ namespace TutorTime.Controllers.APIs
         [HttpDelete("~/api/tutors/{id}")]
         public IActionResult DeleteTutor([FromRoute]int id)
         {
-            Tutor tut = _context.Tutors.Find(id);
+            Tutor tut = _context.Tutors.FirstOrDefault( x=> x.Id == id);
 
             if (tut != null)
             {
