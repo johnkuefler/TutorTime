@@ -7,3 +7,4 @@
 /.vs
 
 appsettings.Development.json
+/Source/TutorTime.csproj.user
