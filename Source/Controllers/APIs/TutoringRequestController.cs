@@ -28,7 +28,7 @@ namespace TutorTime.Controllers.APIs
         [HttpGet ("~/api/tutoringrequest/{TutorId}")]
         public IActionResult GetRequestsByTutor(int TutorId) {
 
-            return Ok(_context.Tutors.Find(TutorId)?.TutoringRequests);
+            return Ok(_context.Tutors.FirstOrDefault(x => x.Id == TutorId));
         }
 
         [HttpPost]
@@ -38,6 +38,7 @@ namespace TutorTime.Controllers.APIs
 
                 return BadRequest(ModelState);
             }
+            
             _context.Add(request);
             _context.SaveChanges();
 
@@ -47,7 +48,7 @@ namespace TutorTime.Controllers.APIs
         [HttpPut]
         public IActionResult IncrementSession(int requestid) {
 
-           var request =  _context.TutoringRequests.Find(requestid);
+            var request = _context.TutoringRequests.FirstOrDefault(x => x.Id == requestid);
             if (request == null) {
                 return NotFound();
 
@@ -61,7 +62,7 @@ namespace TutorTime.Controllers.APIs
         }
         [HttpDelete]
         public IActionResult DeleteSession(int sessionID) {
-            var request = _context.TutoringRequests.Find(sessionID);
+            var request = _context.TutoringRequests.FirstOrDefault(x => x.Id == sessionID);
             _context.Remove(request);
             _context.SaveChanges();
             return Ok();

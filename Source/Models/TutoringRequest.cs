@@ -9,5 +9,6 @@ namespace TutorTime.Models
         public int NumberOfPeople { get; set; }
         public string Problem { get; set; }
         public DateTimeOffset DateTime { get; set; }
+        public int TutorId { get; set; }
     }
 }
