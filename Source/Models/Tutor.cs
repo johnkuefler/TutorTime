@@ -9,6 +9,7 @@ namespace TutorTime.Models
         public string LastName { get; set; }
         public string Subject { get; set; }
         public string Location { get; set; }
+        public string Time { get; set; }
 
         public virtual IList<TutoringRequest> TutoringRequests { get; set; }
 
