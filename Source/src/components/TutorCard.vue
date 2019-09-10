@@ -22,8 +22,8 @@
 
 </script>
 
-<style scoped>
-  .l-card {
+ <style scoped>
+  /* .l-card {
     border: 1px #efefef solid;
     -webkit-box-shadow: 20px 21px 33px -6px rgba(219, 219, 219, 1);
     -moz-box-shadow: 20px 21px 33px -6px rgba(219, 219, 219, 1);
@@ -52,5 +52,5 @@
     -moz-box-shadow: 22px 25px 33px -2px rgba(219, 219, 219, 1);
     box-shadow: 22px 25px 33px -2px rgba(219, 219, 219, 1);
 
-  }
+  } */
 </style>
