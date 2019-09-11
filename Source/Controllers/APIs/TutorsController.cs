@@ -4,6 +4,8 @@ using TutorTime.Models;
 
 namespace TutorTime.Controllers.APIs
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class TutorsController : Controller
     {
         private readonly TutorDbContext _context;
@@ -13,19 +15,19 @@ namespace TutorTime.Controllers.APIs
             _context = context;
         }
 
-        [HttpGet("~/api/tutors")]
+        [HttpGet]
         public IActionResult GetAllTutors()
         {
             return Ok(_context.Tutors.ToList());
         }
 
-        [HttpGet("~/api/tutors/{id}")]
+        [HttpGet("{id}")]
         public IActionResult GetById([FromRoute] int id)
         {
             return Ok(_context.Tutors.FirstOrDefault(x => x.Id == id));
         }
 
-        [HttpPost("~/api/tutors")]
+        [HttpPost]
         public IActionResult CreateTutor([FromBody]Tutor tut)
         {
             if (!ModelState.IsValid)
@@ -39,10 +41,10 @@ namespace TutorTime.Controllers.APIs
             return Ok(tut);
         }
 
-        [HttpPatch("~/api/tutors/{id}")]
+        [HttpPatch("{id}")]
         public IActionResult UpdateTutor([FromRoute]int id, [FromBody]Tutor tut)
         {
-            if(id != tut.Id)
+            if (id != tut.Id)
             {
                 return BadRequest();
             }
@@ -56,7 +58,7 @@ namespace TutorTime.Controllers.APIs
             return Ok(tut);
         }
 
-        [HttpDelete("~/api/tutors/{id}")]
+        [HttpDelete("{id}")]
         public IActionResult DeleteTutor([FromRoute]int id)
         {
             Tutor tut = _context.Tutors.FirstOrDefault( x=> x.Id == id);
