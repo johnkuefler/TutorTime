@@ -47,7 +47,7 @@ namespace TutorTime.Controllers.APIs
             return Ok(tut);
         }
 
-        [HttpPatch("~/api/tutors/{id}")]
+        [HttpPut("~/api/tutors/{id}")]
         public IActionResult UpdateTutor([FromRoute]int id, [FromBody]TutorViewModel tut)
         {
             if (!ModelState.IsValid)
