@@ -23,17 +23,20 @@
 </script>
 
  <style scoped>
-  /* .l-card {
+  .l-card {
     border: 1px #efefef solid;
-    -webkit-box-shadow: 20px 21px 33px -6px rgba(219, 219, 219, 1);
-    -moz-box-shadow: 20px 21px 33px -6px rgba(219, 219, 219, 1);
-    box-shadow: 20px 21px 33px -6px rgba(219, 219, 219, 1);
-    width: 20%;
+    -webkit-box-shadow:8px 8px 8px -8px #ababab;
+    box-shadow:8px 8px 8px -8px #ababab;
+    -moz-box-shadow: 8px 8px 8px -8px #ababab;
+    box-shadow: 8px 8px 8px -8px #ababab;
+    width: 30%;
     margin: 20px;
     transition-timing-function: ease-in;
     transition-property: box-shadow;
     transition-duration: .1s;
     transition-timing-function: linear;
+    text-align: left;
+    
 
   }
 
@@ -52,5 +55,5 @@
     -moz-box-shadow: 22px 25px 33px -2px rgba(219, 219, 219, 1);
     box-shadow: 22px 25px 33px -2px rgba(219, 219, 219, 1);
 
-  } */
+  }
 </style>
