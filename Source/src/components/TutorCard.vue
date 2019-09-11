@@ -1,11 +1,16 @@
 <template>
+
   <div class="l-card" :class="{'round-card':rounded}">
-    <img :src="imgUrl">
-    <h3>{{title}}</h3>
+    <img :src="tutor.imageUrl">
+    <h3>{{tutor.subject}}</h3>
+    <p>Tutor: {{tutor.firstName}} {{tutor.lastName}}</p>
+    <p>Location: {{tutor.location}}</p>
+    <p>Time: {{tutor.time}}</p>
     <p>
       <slot></slot>
     </p>
   </div>
+
 </template>
 
 <script>
@@ -13,9 +18,10 @@
     name: 'TutorCard',
     data: () => ({ count: 0 }),
     props: {
-      title: String,
-      text: String,
-      imgUrl: String,
+      tutor: {
+        type: Object,
+        default: () => { }
+      },
       rounded: Boolean,
     }
   }
@@ -28,8 +34,6 @@
     -webkit-box-shadow: 20px 21px 33px -6px rgba(219, 219, 219, 1);
     -moz-box-shadow: 20px 21px 33px -6px rgba(219, 219, 219, 1);
     box-shadow: 20px 21px 33px -6px rgba(219, 219, 219, 1);
-    width: 20%;
-    margin: 20px;
     transition-timing-function: ease-in;
     transition-property: box-shadow;
     transition-duration: .1s;
