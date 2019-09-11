@@ -18,38 +18,58 @@ namespace TutorTime.Controllers.APIs
         {
             _context = context;
         }
-        [HttpGet("~/api/tutoringrequest")]
+        [HttpGet]
         public IActionResult GetAllRequests()
         {
             return Ok(_context.TutoringRequests.ToList());
 
 
         }
-        [HttpGet ("~/api/tutoringrequest/{TutorId}")]
-        public IActionResult GetRequestsByTutor(int TutorId) {
+        [HttpGet("{TutorId}")]
+        public IActionResult GetRequestsByTutor(int TutorId)
+        {
 
             return Ok(_context.Tutors.FirstOrDefault(x => x.Id == TutorId));
         }
 
         [HttpPost]
-        public IActionResult CreateRequest([FromBody] TutoringRequest request) {
+        public IActionResult CreateRequest([FromBody] TutoringRequest request)
+        {
 
-            if (!ModelState.IsValid) {
+            if (!ModelState.IsValid)
+            {
 
                 return BadRequest(ModelState);
             }
-            
+
             _context.Add(request);
             _context.SaveChanges();
 
             return Ok(request);
         }
 
-        [HttpPut]
-        public IActionResult IncrementSession(int requestid) {
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateRequest(int id,[FromBody]TutoringRequest request)
+        {
+            if (id != request.Id)
+            {
+                return BadRequest();
+            }
+            _context.TutoringRequests.Update(request);
+            _context.SaveChanges();
+
+            return Ok(request);
+        }
+
+
+        [HttpPut("Join")]
+        public IActionResult IncrementSession(int requestid)
+        {
 
             var request = _context.TutoringRequests.FirstOrDefault(x => x.Id == requestid);
-            if (request == null) {
+            if (request == null)
+            {
                 return NotFound();
 
             }
@@ -58,10 +78,10 @@ namespace TutorTime.Controllers.APIs
             _context.SaveChanges();
 
             return Ok(request);
-
         }
         [HttpDelete]
-        public IActionResult DeleteSession(int sessionID) {
+        public IActionResult DeleteSession(int sessionID)
+        {
             var request = _context.TutoringRequests.FirstOrDefault(x => x.Id == sessionID);
             _context.Remove(request);
             _context.SaveChanges();
