@@ -26,45 +26,31 @@ namespace TutorTime.Controllers.APIs
         }
 
         [HttpPost("~/api/tutors")]
-        public IActionResult CreateTutor([FromBody]TutorViewModel tut)
+        public IActionResult CreateTutor([FromBody]Tutor tut)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            Tutor newTutor = new Tutor
-            {
-                FirstName = tut.FirstName,
-                LastName = tut.LastName,
-                Location = tut.Location,
-                Subject = tut.Subject,
-            };
-
-            _context.Tutors.Add(newTutor);
+            _context.Tutors.Add(tut);
             _context.SaveChanges();
 
             return Ok(tut);
         }
 
         [HttpPatch("~/api/tutors/{id}")]
-        public IActionResult UpdateTutor([FromRoute]int id, [FromBody]TutorViewModel tut)
+        public IActionResult UpdateTutor([FromRoute]int id, [FromBody]Tutor tut)
         {
+            if(id != tut.Id)
+            {
+                return BadRequest();
+            }
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
-            Tutor tutorToUpdate = _context.Tutors.Find(id);
-            if (tutorToUpdate == null)
-            {
-                return NotFound();
-            }
-            tutorToUpdate.FirstName = tut.FirstName;
-            tutorToUpdate.LastName = tut.LastName;
-            tutorToUpdate.Location = tut.Location;
-            tutorToUpdate.Subject = tut.Subject;
-
+            _context.Tutors.Update(tut);
             _context.SaveChanges();
 
             return Ok(tut);
