@@ -18,18 +18,14 @@ namespace TutorTime.Controllers.APIs
         {
             _context = context;
         }
-        [HttpGet]
-        public IActionResult GetAllRequests()
-        {
-            return Ok(_context.TutoringRequests.ToList());
-
-
-        }
+       
         [HttpGet("{TutorId}")]
         public IActionResult GetRequestsByTutor(int TutorId)
         {
 
-            return Ok(_context.Tutors.FirstOrDefault(x => x.Id == TutorId));
+            
+            return Ok(_context.TutoringRequests.FirstOrDefault(x => x.TutorId == TutorId
+                                                                    && x.DateTime >= DateTimeOffset.Now.Date));
         }
 
         [HttpPost]
