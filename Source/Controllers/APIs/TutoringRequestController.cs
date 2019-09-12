@@ -24,8 +24,8 @@ namespace TutorTime.Controllers.APIs
         {
 
             
-            return Ok(_context.TutoringRequests.FirstOrDefault(x => x.TutorId == TutorId
-                                                                    && x.DateTime >= DateTimeOffset.Now.Date));
+            return Ok(_context.TutoringRequests.Where(x => x.TutorId == TutorId
+                                             && x.DateTime >= DateTimeOffset.Now.Date).ToList());
         }
 
         [HttpPost]
