@@ -2,13 +2,12 @@
 
   <div class="l-card" :class="{'round-card':rounded}">
     <img :src="tutor.imageUrl">
-    <h3>{{tutor.subject}}</h3>
-    <p>Tutor: {{tutor.firstName}} {{tutor.lastName}}</p>
-    <p>Location: {{tutor.location}}</p>
-    <p>Time: {{tutor.time}}</p>
-    <p>
-      <slot></slot>
-    </p>
+    <div class="ml-3">
+        <h3>{{tutor.subject}}</h3>
+        <p>Tutor: {{tutor.firstName}} {{tutor.lastName}}</p>
+        <p>Location: {{tutor.location}}</p>
+        <p>Time: {{tutor.time}}</p>
+    </div>
   </div>
 
 </template>
@@ -31,13 +30,14 @@
 <style scoped>
   .l-card {
     border: 1px #efefef solid;
-    -webkit-box-shadow: 20px 21px 33px -6px rgba(219, 219, 219, 1);
-    -moz-box-shadow: 20px 21px 33px -6px rgba(219, 219, 219, 1);
-    box-shadow: 20px 21px 33px -6px rgba(219, 219, 219, 1);
+    -webkit-box-shadow: 10px 10px 10px -2px rgba(219, 219, 219, 1);
+    -moz-box-shadow: 10px 10px 10px -2px rgba(219, 219, 219, 1);
+    box-shadow: 10px 10px 10px -2px rgba(219, 219, 219, 1);
     transition-timing-function: ease-in;
     transition-property: box-shadow;
     transition-duration: .1s;
     transition-timing-function: linear;
+    text-align: left;
 
   }
 
@@ -47,7 +47,7 @@
   }
 
   .round-card {
-    border-radius: 10px;
+    border-radius: 3px;
     overflow: hidden;
   }
 
