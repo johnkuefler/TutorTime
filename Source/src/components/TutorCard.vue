@@ -1,21 +1,22 @@
 <template>
 
-  <div class="l-card" :class="{'round-card':rounded}">
-    <img :src="tutor.imageUrl">
-    <div class="ml-3">
-        <h3>{{tutor.subject}}</h3>
-        <p>Tutor: {{tutor.firstName}} {{tutor.lastName}}</p>
-        <p>Location: {{tutor.location}}</p>
-        <p>Time: {{tutor.time}}</p>
-    </div>
-  </div>
+    <a :href="'/home/tutorrequests/'+tutor.id" style="text-decoration:none">
+        <div class="l-card" :class="{'round-card':rounded}">
+            <img :src="tutor.imageUrl">
+            <div class="ml-3">
+                <h3>{{tutor.subject}}</h3>
+                <p>Tutor: {{tutor.firstName}} {{tutor.lastName}}</p>
+                <p>Location: {{tutor.location}}</p>
+                <p>Time: {{tutor.time}}</p>
+            </div>
+        </div>
+    </a>
 
 </template>
 
 <script>
   export default {
     name: 'TutorCard',
-    data: () => ({ count: 0 }),
     props: {
       tutor: {
         type: Object,

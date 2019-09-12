@@ -1,0 +1,9 @@
+﻿@using Newtonsoft.Json
+@model Tutor
+@{
+    ViewData["Title"] = "TutorRequests";
+}
+
+<h1>Tutor Requests</h1>
+
+<tutor-requests :tutor='@Json.Serialize(Model)'></tutor-requests>
