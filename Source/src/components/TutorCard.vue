@@ -2,13 +2,12 @@
 
   <div class="l-card" :class="{'round-card':rounded}">
     <img :src="tutor.imageUrl">
-    <h3>{{tutor.subject}}</h3>
-    <p>Tutor: {{tutor.firstName}} {{tutor.lastName}}</p>
-    <p>Location: {{tutor.location}}</p>
-    <p>Time: {{tutor.time}}</p>
-    <p>
-      <slot></slot>
-    </p>
+    <div class="ml-3">
+        <h3>{{tutor.subject}}</h3>
+        <p>Tutor: {{tutor.firstName}} {{tutor.lastName}}</p>
+        <p>Location: {{tutor.location}}</p>
+        <p>Time: {{tutor.time}}</p>
+    </div>
   </div>
 
 </template>
