@@ -2,8 +2,9 @@
     <div class="container">
         <div class="card">
             <div class="tutor-request-card" style="height:50px">
-                <div class="h1 p-2">{{ tutor.subject }}</div>
-                <div>{{ tutor.subject }} Name: {{tutor.firstName}} {{tutor.lastName}} Location: {{tutor.location}} Time: {{tutor.time}}</div>
+                <div class="pl-2">
+                    <span class="h1 pl-2">{{ tutor.subject }}</span> <span class="pl-5"><b>Name:</b> {{tutor.firstName}} {{tutor.lastName}}</span> <span class="pl-5"><b>Location:</b> {{tutor.location}}</span> <span class="pl-5"><b>Time:</b>{{tutor.time}}</span>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -13,6 +14,7 @@
         </div>
     </div>
 </template>
+
 <script>
     import axios from 'axios';
 
@@ -51,13 +53,7 @@
 
     .card {
         border: 1px #efefef solid;
-        -webkit-box-shadow: 10px 10px 10px -2px rgba(219, 219, 219, 1);
-        -moz-box-shadow: 10px 10px 10px -2px rgba(219, 219, 219, 1);
-        box-shadow: 10px 10px 10px -2px rgba(219, 219, 219, 1);
-        transition-timing-function: ease-in;
-        transition-property: box-shadow;
-        transition-duration: .1s;
-        transition-timing-function: linear;
         text-align: left;
+        margin: 30px;
     }
 </style>

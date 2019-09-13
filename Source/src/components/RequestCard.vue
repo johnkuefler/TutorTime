@@ -3,9 +3,9 @@
 
   <div class="card">
     <div class="ml-3">
-      <p>Time: {{request.dateTime}}</p>
-      <p>Request: {{request.problem}}</p>
-      <p>Requester: {{request.name}}</p>
+      <p><b>Time:</b> {{request.dateTime}}</p>
+      <p><b>Request:</b> {{request.problem}}</p>
+      <p><b>Requester:</b> {{request.name}}</p>
       <div class="row" style="padding:10px 10px;">
         <h3>{{request.numberOfPeople}}</h3>
         <div style="padding:0px 30px" />
@@ -39,11 +39,10 @@
 
 <style scoped>
   .button {
-    background-color: #82e09b;
+    background-color: #64CC96;
     -moz-border-radius: 17px;
     -webkit-border-radius: 17px;
     border-radius: 17px;
-    border: 1px solid #18ab29;
     display: inline-block;
     cursor: pointer;
     color: #000000;
@@ -55,7 +54,7 @@
   }
 
   .button:hover {
-    background-color: #5cbf2a;
+    background-color: #C8F2DC;
   }
 
   .button:active {
@@ -73,5 +72,8 @@
     transition-duration: .1s;
     transition-timing-function: linear;
     text-align: left;
+    padding: 15px;
+    background-color: #F5F4F4;
+    border-radius: 15px;
   }
 </style>
