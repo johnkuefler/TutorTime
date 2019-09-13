@@ -10,3 +10,5 @@
 appsettings.Development.json
 /Source/TutorTime.csproj.user
 /TutorTime.sln.DotSettings.user
+.vscode/launch.json
+.vscode/tasks.json

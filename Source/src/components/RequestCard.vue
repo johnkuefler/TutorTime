@@ -3,7 +3,7 @@
     
         <div class="card">
             <div class="ml-3">
-                <p>Time: {{request.time}}</p>
+                <p>Time: {{request.dateTime}}</p>
                 <p>Request: {{request.problem}}</p>
                 <p>Requester: {{request.name}}</p>
                 <h3>{{request.numberOfPeople}}</h3>
