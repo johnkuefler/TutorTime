@@ -7,8 +7,7 @@
             </div>
         </div>
         <div class="row">
-
-            <div v-for="request in tutoringRequests" class="col-md-4">
+            <div v-for="request in tutoringRequests" class="col-md-4" :key="request.id">
                 <request-card :request="request"></request-card>
             </div>
         </div>

@@ -50,6 +50,26 @@ img[data-v-4dcc5f34] {
 }
 
 
+.button[data-v-e7d9ee82] {
+  background-color: #82e09b;
+  border-radius: 17px;
+  border: 1px solid #18ab29;
+  display: inline-block;
+  cursor: pointer;
+  color: #000000;
+  font-family: Arial;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+.button[data-v-e7d9ee82]:hover {
+  background-color: #5cbf2a;
+}
+.button[data-v-e7d9ee82]:active {
+  position: relative;
+  top: 1px;
+}
 .card[data-v-e7d9ee82] {
   border: 1px #efefef solid;
   -webkit-box-shadow: 10px 10px 10px -2px rgba(219, 219, 219, 1);
