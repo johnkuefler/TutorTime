@@ -3,7 +3,7 @@
     <a :href="'/home/tutorrequests/'+tutor.id" style="text-decoration:none">
         <div class="l-card" :class="{'round-card':rounded}">
             <img :src="tutor.imageUrl">
-            <div class="ml-3">
+            <div class="ml-3 mt-3">
                 <h3>{{tutor.subject}}</h3>
                 <p>Tutor: {{tutor.firstName}} {{tutor.lastName}}</p>
                 <p>Location: {{tutor.location}}</p>
@@ -39,6 +39,7 @@
     transition-duration: .1s;
     transition-timing-function: linear;
     text-align: left;
+    -webkit-text-fill-color: black;
 
   }
 
@@ -53,9 +54,9 @@
   }
 
   .l-card:hover {
-    -webkit-box-shadow: 22px 25px 33px -2px rgba(219, 219, 219, 1);
-    -moz-box-shadow: 22px 25px 33px -2px rgba(219, 219, 219, 1);
-    box-shadow: 22px 25px 33px -2px rgba(219, 219, 219, 1);
+    -webkit-box-shadow: 15px 15px 15px -2px rgba(219, 219, 219, 1);
+    -moz-box-shadow: 15px 15px 15px -2px rgba(219, 219, 219, 1);
+    box-shadow: 15px 15px 15px -2px rgba(219, 219, 219, 1);
 
   }
 </style>
