@@ -75,5 +75,6 @@
     padding: 15px;
     background-color: #F5F4F4;
     border-radius: 15px;
+    width: 340px;
   }
 </style>

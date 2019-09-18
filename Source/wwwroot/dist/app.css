@@ -33,7 +33,6 @@ img[data-v-4dcc5f34] {
     background-color: #F5F4F4;
 }
 .card[data-v-7a61ac1a] {
-    border: 1px #efefef solid;
     text-align: left;
     margin: 30px;
 }
@@ -76,5 +75,6 @@ img[data-v-4dcc5f34] {
   padding: 15px;
   background-color: #F5F4F4;
   border-radius: 15px;
+  width: 340px;
 }
 
