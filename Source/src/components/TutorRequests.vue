@@ -1,8 +1,9 @@
 ﻿<template>
-    <div class="container ">
-        <div class="card ">
-            <div class="tutor-request-card " style="height:50px">
-                <div class="pl-2 ">
+    <div v-if="loading"><img src="/images/loader.gif" alt=""></div>
+    <div v-else class="container ">
+        <div class="card">
+            <div class="tutor-request-card" style="height:50px">
+                <div class="pl-2">
                     <span class="h1 pl-2">{{ tutor.subject }}</span> <span class="pl-5"><b>Name:</b> {{tutor.firstName}} {{tutor.lastName}}</span> <span class="pl-5"><b>Location:</b> {{tutor.location}}</span> <span class="pl-5"><b>Time:</b>{{tutor.time}}</span>
                 </div>
             </div>
@@ -13,6 +14,7 @@
             </div>
         </div>
     </div>
+
 </template>
 
 <script>
@@ -21,7 +23,8 @@
     export default {
         name: 'TutorRequests',
         data: () => ({
-            tutoringRequests: []
+            tutoringRequests: [],
+            loading: false,
         }),
         props: {
             tutor: {
@@ -32,12 +35,15 @@
 
         mounted() {
             this.getTutorRequests();
+
         },
 
         methods: {
             async getTutorRequests() {
+                this.loading = true;
                 const { data } = await axios.get('/api/tutoringrequest/' + this.tutor.id);
                 this.tutoringRequests = data;
+                this.loading = false;
             },
 
         },
