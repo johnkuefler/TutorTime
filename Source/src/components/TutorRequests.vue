@@ -1,63 +1,58 @@
-﻿<template>
-    <div class="container">
-        <div class="card">
-            <div class="card-header" style="height:50px">
-                {{ tutor.subject }} Name: {{tutor.firstName}} {{tutor.lastName}} Location: {{tutor.location}} Time: {{tutor.time}}
+﻿<style scoped>
+    .tutor-request-card {
+        background-color: #F5F4F4;
+
+    }
+</style>
+
+<template>
+    <div v-if="loading"><img src="/images/loader.gif" alt=""></div>
+    <div v-else class="card">
+        <div class="border">
+            <div class="tutor-request-card" style="height:50px">
+                <div class="pl-2 ">
+                    <span class="h1 pl-2">{{ tutor.subject }}</span> <span class="pl-5"><b>Name:</b> {{tutor.firstName}} {{tutor.lastName}}</span> <span class="pl-5"><b>Location:</b> {{tutor.location}}</span> <span class="pl-5"><b>Time:</b>{{tutor.time}}</span>
+                </div>
             </div>
         </div>
-
-        <div class="row">
-            <div v-for="request in tutoringRequests" class="col-md-4" :key="request.id">
+        <div class="row mx-0">
+            <div v-for="request in tutoringRequests" class="col-md-4 p-4 " :key="request.id">
                 <request-card :request="request"></request-card>
             </div>
         </div>
     </div>
+
 </template>
+
 <script>
     import axios from 'axios';
 
     export default {
         name: 'TutorRequests',
         data: () => ({
-            tutoringRequests: []
+            tutoringRequests: [],
+            loading: false,
         }),
         props: {
-          tutor: {
-            type: Object,
-            default: () => { }
-          },
+            tutor: {
+                type: Object,
+                default: () => { }
+            },
         },
 
         mounted() {
             this.getTutorRequests();
+
         },
 
         methods: {
             async getTutorRequests() {
-                const { data } = await axios.get('/api/tutoringrequest/'+this.tutor.id);
+                this.loading = true;
+                const { data } = await axios.get('/api/tutoringrequest/' + this.tutor.id);
                 this.tutoringRequests = data;
+                this.loading = false;
             },
 
         },
     };
 </script>
-
-
-<style scoped>
-    .card-header {
-        background-color:lightgray
-    }
-
-    .card {
-        border: 1px #efefef solid;
-        -webkit-box-shadow: 10px 10px 10px -2px rgba(219, 219, 219, 1);
-        -moz-box-shadow: 10px 10px 10px -2px rgba(219, 219, 219, 1);
-        box-shadow: 10px 10px 10px -2px rgba(219, 219, 219, 1);
-        transition-timing-function: ease-in;
-        transition-property: box-shadow;
-        transition-duration: .1s;
-        transition-timing-function: linear;
-        text-align: left;
-    }
-
-</style>
