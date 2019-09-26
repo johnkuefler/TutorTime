@@ -32,6 +32,25 @@ img[data-v-4dcc5f34] {
 .tutor-request-card[data-v-7a61ac1a] {
     background-color: #F5F4F4;
 }
+.button[data-v-7a61ac1a] {
+    background-color: #64CC96;
+    border-radius: 17px;
+    display: inline-block;
+    cursor: pointer;
+    color: #000000;
+    font-family: Arial;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 10px 10px;
+    text-decoration: none;
+}
+.button[data-v-7a61ac1a]:hover {
+    background-color: #C8F2DC;
+}
+.button[data-v-7a61ac1a]:active {
+    position: relative;
+    top: 1px;
+}
 
 
 .button[data-v-e7d9ee82] {
