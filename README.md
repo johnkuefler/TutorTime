@@ -44,3 +44,17 @@ __Back-end:__
 * `dotnet ef database update` - applies any unapplied migrations to the database
 
 * `dotnet ef migrations remove` - removes the most recent migration, as long as it has not been appleid to the database
+
+## Installing Node.js and Vue CLI
+
+1. [Download LTS version of nodejs](https://nodejs.org)
+2. Run ``npm install -g @vue/cli`` from the terminal of your choice
+3. Verify installation with ``vue --version`` and ``node --version`` and ``npm --version``
+4. [Download vue dev browser extension](https://jpapa.me/vuedevtools)
+
+### Setting up Visual Studio Code for Vue development
+
+1. [Download vscode](https://jpapa.me/vuecode)
+2. [Download vetur extension](https://jpapa.me/vetur)
+3. [Download vue snippets](https://jpapa.me/vuesnippets)
+
